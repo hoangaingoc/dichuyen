@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiChuyen</title>
+</head>
+<body>
+<!--Đi từ trái sang phải, gặp phải thì ngay lập tức chui ra từ bên trái và tiếp tục chạy-->
+<!--Di chuyển thành 1 HCN-->
+<!--<img src="hoatim.webp" alt="" style="width: 200px; position: absolute; top: 100px; left: 200px" id="pic">-->
+<img src="hoatim.webp" alt="" style="width: 200px; position: absolute; top: 100px; right: 200px" id="pic">
+<script>
+    /*
+        let s = 3
+        let s1 = 3
+        setInterval(() => {
+            let son = document.getElementById('pic')
+            son.style.left = parseInt(son.style.left) + s + 'px'
+            son.style.top = parseInt(son.style.top) + s1 + 'px'
+            if (parseInt(son.style.left) <= 0 || parseInt(son.style.left) > window.innerWidth - son.width) {
+                s = -s
+            }
+            if (parseInt(son.style.top) <= 0 || parseInt(son.style.top) >= window.innerHeight - son.height) {
+                s1 = -s1
+            }
+        }, 1)
+
+    let s = 3
+    setInterval(() => {
+        let son = document.getElementById('pic')
+        son.style.right = parseInt(son.style.right) + s + 'px'
+        if (parseInt(son.style.right) > window.innerWidth) {
+            son.style.right = - son.width + 'px'
+        }
+    }, 1)
+
+     */
+
+    let s = 3
+    setInterval(() => {
+        let son = document.getElementById('pic')
+        if (parseInt(son.style.right) < window.innerWidth) {
+            son.style.right = parseInt(son.style.right) + s + 'px'
+        } else {
+            son.style.top = parseInt(son.style.top) + s + 'px'
+        }
+        // if (parseInt(son.style.top) < window.innerHeight) {
+        //     son.style.top = parseInt(son.style.top) + s + 'px'
+        // } else {
+        //     son.style.top = son.style.left
+        // }
+        // if (parseInt(son.style.left) < window.innerWidth) {
+        //     son.style.left = parseInt(son.style.left) - s + 'px'
+        // } else {
+        //     son.style.left = son.style.top
+        // }
+        // if (parseInt(son.style.top) < window.innerWidth) {
+        //     son.style.top = parseInt(son.style.top) - s + 'px'
+        // } else {
+        //     son.style.top = son.style.right
+        // }
+
+    }, 1)
+</script>
+</body>
+</html>
