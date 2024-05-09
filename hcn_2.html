@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN_cách2</title>
+</head>
+<body>
+<img src="anh.png" alt="" style="width: 200px; position: absolute; top: 0px; left: 0px" id="v">
+<script>
+    let vW = 20;
+    let vH = 20;
+    function sangPhai() {
+        let son = document.getElementById('v');
+        son.style.left = parseInt(son.style.left) + vW + 'px';
+        let viTri = parseInt(son.style.left);
+        let viTriTop = parseInt(son.style.top);
+        if(viTri > window.innerWidth - son.width && viTriTop >= 0) {
+            vW = 0;
+            vH = 20;
+            son.style.top = viTriTop + vH + 'px';
+        }
+        if(parseInt(son.style.top) > window.innerHeight - son.height) {
+            vH = 0;
+            vW = -20;
+        }
+
+        if(parseInt(son.style.left) <= 0 && parseInt(son.style.top) >= 0) {
+            vW = 0;
+            vH = -20;
+            son.style.top = viTriTop + vH + 'px';
+        }
+
+        if(parseInt(son.style.left) <= 0 && parseInt(son.style.top) <= 0) {
+            vW = 20;
+            vH = 0;
+        }
+    }
+
+    setInterval(function () {
+        sangPhai();
+    }, 10)
+</body>
+</html>
